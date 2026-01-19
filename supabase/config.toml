@@ -1,0 +1,13 @@
+project_id = "emysftetujupkqxhouty"
+
+[functions.chat]
+verify_jwt = false
+
+[functions.analyze-report]
+verify_jwt = false
+
+[functions.send-email]
+verify_jwt = false
+
+[functions.check-appointment-reminders]
+verify_jwt = false

@@ -1,0 +1,263 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CURAX Healthcare Design System - Calming, Professional, Modern */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Core Healthcare Palette - Calming Teals & Blues */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Primary - Soothing Teal */
+    --primary: 174 72% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft Sky Blue */
+    --secondary: 199 89% 94%;
+    --secondary-foreground: 199 50% 30%;
+
+    /* Muted - Gentle Gray */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Warm Coral for CTAs */
+    --accent: 12 76% 61%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 174 72% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom Healthcare Colors */
+    --success: 158 64% 42%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(174, 72%, 40%) 0%, hsl(199, 89%, 48%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(174, 72%, 45%) 0%, hsl(185, 70%, 35%) 50%, hsl(199, 89%, 48%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 20%, 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(12, 76%, 61%) 0%, hsl(25, 85%, 55%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(215 25% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(215 25% 15% / 0.08), 0 2px 4px -2px hsl(215 25% 15% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(215 25% 15% / 0.08), 0 4px 6px -4px hsl(215 25% 15% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(215 25% 15% / 0.1), 0 8px 10px -6px hsl(215 25% 15% / 0.1);
+    --shadow-glow: 0 0 40px -10px hsl(174 72% 40% / 0.3);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 25% 15%;
+    --sidebar-primary: 174 72% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 199 89% 94%;
+    --sidebar-accent-foreground: 199 50% 30%;
+    --sidebar-border: 214 20% 90%;
+    --sidebar-ring: 174 72% 40%;
+  }
+
+  .dark {
+    --background: 215 28% 10%;
+    --foreground: 210 20% 98%;
+
+    --card: 215 28% 14%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 215 28% 14%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 174 72% 50%;
+    --primary-foreground: 215 28% 10%;
+
+    --secondary: 215 28% 18%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 215 28% 18%;
+    --muted-foreground: 215 16% 60%;
+
+    --accent: 12 76% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 28% 20%;
+    --input: 215 28% 20%;
+    --ring: 174 72% 50%;
+
+    --sidebar-background: 215 28% 12%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 174 72% 50%;
+    --sidebar-primary-foreground: 215 28% 10%;
+    --sidebar-accent: 215 28% 18%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 215 28% 20%;
+    --sidebar-ring: 174 72% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Glass morphism cards */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  /* Hero gradient background */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Accent gradient */
+  .accent-gradient {
+    background: var(--gradient-accent);
+  }
+
+  /* Smooth scroll */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Pulse animation for status indicators */
+  .status-pulse {
+    @apply relative;
+  }
+
+  .status-pulse::after {
+    content: '';
+    @apply absolute inset-0 rounded-full animate-ping;
+    background-color: inherit;
+    opacity: 0.4;
+  }
+
+  /* Shimmer loading effect */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--background)) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Float animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
